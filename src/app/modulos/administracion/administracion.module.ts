@@ -22,6 +22,7 @@ import { CrearAdministradorComponent } from './administradores/crear-administrad
 import { EditarAdministradorComponent } from './administradores/editar-administrador/editar-administrador.component';
 import { EliminarAdministradorComponent } from './administradores/eliminar-administrador/eliminar-administrador.component';
 import { BuscarAdministradorComponent } from './administradores/buscar-administrador/buscar-administrador.component';
+import { ListaInmueblesComponent } from './inmuebles/lista-inmuebles/lista-inmuebles.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { BuscarAdministradorComponent } from './administradores/buscar-administr
     CrearAdministradorComponent,
     EditarAdministradorComponent,
     EliminarAdministradorComponent,
-    BuscarAdministradorComponent
+    BuscarAdministradorComponent,
+    ListaInmueblesComponent
   ],
   imports: [
     CommonModule,
