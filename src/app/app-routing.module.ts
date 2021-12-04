@@ -2,6 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ErrorComponent } from './plantilla/error/error.component';
 import { InicioComponent } from './plantilla/inicio/inicio.component';
+import { ListadoInmueblesComponent } from './plantilla/listado-inmuebles/listado-inmuebles.component';
+import { OpcionesRegistroComponent } from './plantilla/opciones-registro/opciones-registro.component';
+import { PoliticaPrivacidadComponent } from './plantilla/politica-privacidad/politica-privacidad.component';
+import { SobreNosotrosComponent } from './plantilla/sobre-nosotros/sobre-nosotros.component';
+import { TerminosComponent } from './plantilla/terminos/terminos.component';
 
 const routes: Routes = [
   {
@@ -24,10 +29,30 @@ const routes: Routes = [
       path: "solicitud",
       loadChildren: () => import("./modulos/solicitud/solicitud.module").then(x => x.SolicitudModule)
       },
-  {
-    path:"**",
-    component: ErrorComponent
-  }
+      {
+        path: "opciones-registro",
+        component: OpcionesRegistroComponent
+      },
+      {
+        path: "listado-inmuebles",
+        component: ListadoInmueblesComponent
+      },
+      {
+        path: "politica-privacidad",
+        component: PoliticaPrivacidadComponent
+      },
+      {
+        path: "sobre-nosotros",
+        component: SobreNosotrosComponent
+      },
+      {
+        path: "terminos",
+        component: TerminosComponent
+      },
+      {
+      path:"**",
+      component: ErrorComponent
+      }
 ];
 
 @NgModule({

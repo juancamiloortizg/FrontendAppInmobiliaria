@@ -7,6 +7,11 @@ import { BarraNavegacionComponent } from './plantilla/barra-navegacion/barra-nav
 import { PiePaginaComponent } from './plantilla/pie-pagina/pie-pagina.component';
 import { InicioComponent } from './plantilla/inicio/inicio.component';
 import { ErrorComponent } from './plantilla/error/error.component';
+import { OpcionesRegistroComponent } from './plantilla/opciones-registro/opciones-registro.component';
+import { ListadoInmueblesComponent } from './plantilla/listado-inmuebles/listado-inmuebles.component';
+import { SobreNosotrosComponent } from './plantilla/sobre-nosotros/sobre-nosotros.component';
+import { PoliticaPrivacidadComponent } from './plantilla/politica-privacidad/politica-privacidad.component';
+import { TerminosComponent } from './plantilla/terminos/terminos.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +20,11 @@ import { ErrorComponent } from './plantilla/error/error.component';
     PiePaginaComponent,
     InicioComponent,
     ErrorComponent,
+    OpcionesRegistroComponent,
+    ListadoInmueblesComponent,
+    SobreNosotrosComponent,
+    PoliticaPrivacidadComponent,
+    TerminosComponent,
   ],
   imports: [
     BrowserModule,
