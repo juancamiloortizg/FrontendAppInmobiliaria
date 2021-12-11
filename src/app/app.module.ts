@@ -13,6 +13,7 @@ import { SobreNosotrosComponent } from './plantilla/sobre-nosotros/sobre-nosotro
 import { PoliticaPrivacidadComponent } from './plantilla/politica-privacidad/politica-privacidad.component';
 import { TerminosComponent } from './plantilla/terminos/terminos.component';
 import { OpcionesIngresoComponent } from './plantilla/opciones-ingreso/opciones-ingreso.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { OpcionesIngresoComponent } from './plantilla/opciones-ingreso/opciones-
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

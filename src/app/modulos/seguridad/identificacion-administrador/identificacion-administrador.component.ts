@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SeguridadService } from 'src/app/servicios/seguridad.service';
+const cryptoPackage: any = require("cryptojs");
 
 @Component({
   selector: 'app-identificacion-administrador',
@@ -13,7 +15,8 @@ export class IdentificacionAdministradorComponent implements OnInit {
     'clave': ['', [Validators.required]]
   });
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+    private servicioSeguridad: SeguridadService) { }
 
   ngOnInit(): void {
   }
@@ -21,8 +24,12 @@ export class IdentificacionAdministradorComponent implements OnInit {
   IdentificarUsuario() {
     let usuario = this.fgValidator.controls["usuario"].value;
     let clave = this.fgValidator.controls["clave"].value;
-    // #TODO
-    alert(`${usuario} | ${clave}`)
+    let claveCifrada = cryptoPackage.MD5(clave).toString();
+    let ident = this.servicioSeguridad.IdentificarAdministrador(usuario, claveCifrada).subscribe((datos: any) => {
+      alert("Correcto");
+    }, (error: any) => {
+      alert("Incorrecto.");
+    })
   }
 
 }
