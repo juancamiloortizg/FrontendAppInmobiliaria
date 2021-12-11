@@ -12,6 +12,7 @@ import { ListadoInmueblesComponent } from './plantilla/listado-inmuebles/listado
 import { SobreNosotrosComponent } from './plantilla/sobre-nosotros/sobre-nosotros.component';
 import { PoliticaPrivacidadComponent } from './plantilla/politica-privacidad/politica-privacidad.component';
 import { TerminosComponent } from './plantilla/terminos/terminos.component';
+import { OpcionesIngresoComponent } from './plantilla/opciones-ingreso/opciones-ingreso.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { TerminosComponent } from './plantilla/terminos/terminos.component';
     SobreNosotrosComponent,
     PoliticaPrivacidadComponent,
     TerminosComponent,
+    OpcionesIngresoComponent,
   ],
   imports: [
     BrowserModule,

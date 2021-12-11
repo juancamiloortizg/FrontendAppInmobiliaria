@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ErrorComponent } from './plantilla/error/error.component';
 import { InicioComponent } from './plantilla/inicio/inicio.component';
 import { ListadoInmueblesComponent } from './plantilla/listado-inmuebles/listado-inmuebles.component';
+import { OpcionesIngresoComponent } from './plantilla/opciones-ingreso/opciones-ingreso.component';
 import { OpcionesRegistroComponent } from './plantilla/opciones-registro/opciones-registro.component';
 import { PoliticaPrivacidadComponent } from './plantilla/politica-privacidad/politica-privacidad.component';
 import { SobreNosotrosComponent } from './plantilla/sobre-nosotros/sobre-nosotros.component';
@@ -48,6 +49,10 @@ const routes: Routes = [
       {
         path: "terminos",
         component: TerminosComponent
+      },
+      {
+        path: "opciones-ingreso",
+        component: OpcionesIngresoComponent
       },
       {
       path:"**",

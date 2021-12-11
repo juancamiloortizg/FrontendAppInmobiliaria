@@ -2,20 +2,33 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SeguridadRoutingModule } from './seguridad-routing.module';
-import { IdentificacionComponent } from './identificacion/identificacion.component';
 import { CambioClaveComponent } from './cambio-clave/cambio-clave.component';
 import { RecuperarClaveComponent } from './recuperar-clave/recuperar-clave.component';
+import { IdentificacionClienteComponent } from './identificacion-cliente/identificacion-cliente.component';
+import { IdentificacionAsesorComponent } from './identificacion-asesor/identificacion-asesor.component';
+import { IdentificacionAdministradorComponent } from './identificacion-administrador/identificacion-administrador.component';
+import { RegistroAsesorComponent } from './registro-asesor/registro-asesor.component';
+import { RegistroAdministradorComponent } from './registro-administrador/registro-administrador.component';
+import { RegistroClienteComponent } from './registro-cliente/registro-cliente.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    IdentificacionComponent,
     CambioClaveComponent,
-    RecuperarClaveComponent
+    RecuperarClaveComponent,
+    IdentificacionClienteComponent,
+    IdentificacionAsesorComponent,
+    IdentificacionAdministradorComponent,
+    RegistroAsesorComponent,
+    RegistroAdministradorComponent,
+    RegistroClienteComponent,
   ],
   imports: [
     CommonModule,
-    SeguridadRoutingModule
+    SeguridadRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SeguridadModule { }
