@@ -23,4 +23,8 @@ export class SeguridadService {
     })
   }
 
+  login(user: any): Observable<any> {
+    return this.http.post(`${this.url}/identificarAdministrador`, user);
+  }
+
 }
