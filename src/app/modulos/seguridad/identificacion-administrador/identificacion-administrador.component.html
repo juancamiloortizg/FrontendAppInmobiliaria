@@ -1,55 +1,30 @@
-<section class="ftco-section">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6 text-center mb-5">
-                <h2 class="heading-section">Ingreso Administrador</h2>
-            </div>
+<br>
+<br>
+<br>
+<br>
+<div class="login mt-5 pt-5 mb-5 pb-5">
+    <form method="post">
+        <h2>Ingresar como administrador</h2>
+        <div class="row pt-3 pb-3">
+            <input 
+            type="email" 
+            [(ngModel)]="usuario" 
+            name="usuario" 
+            placeholder="Email" 
+            required="required"
+            />
         </div>
-        <div class="row justify-content-center">
-            <div class="col-md-7 col-lg-5">
-                <div class="wrap">
-                    <div class="img" style="background-image: url(images/bg-1.jpg);"></div>
-                    <div class="login-wrap p-4 p-md-5">
-                  <div class="d-flex">
-                      <div class="w-100">
-                          <h3 class="mb-4">Ingresar</h3>
-                      </div>
-                            <div class="w-100">
-                                <p class="social-media d-flex justify-content-end">
-                                    <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a>
-                                    <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a>
-                                </p>
-                            </div>
-                  </div>
-                        <form action="#" method="post" class="signin-form" [formGroup]="fgValidator" (ngSubmit)="IdentificarUsuario()">
-                      <div class="form-group mt-3">
-                          <input formControlName="usuario" type="text" class="form-control" required>
-                          <label class="form-control-placeholder" for="username" [(ngModel)]="email">Usuario</label>
-                      </div>
-                <div class="form-group">
-                  <input formControlName="clave" id="password-field" type="password" class="form-control" required>
-                  <label class="form-control-placeholder" for="password" [(ngModel)]="password">Contraseña</label>
-                  <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-                </div>
-                <div class="form-group">
-                    <button [disabled]="!fgValidator.valid" type="submit" class="form-control btn btn-primary rounded submit px-3" (click)="login()">Sign In</button>
-                </div>
-                <div class="form-group d-md-flex">
-                    <div class="w-50 text-left">
-                        <label class="checkbox-wrap checkbox-primary mb-0">Recordar usuario
-                                  <input type="checkbox" checked>
-                                  <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <div class="w-50 text-md-right">
-                                    <a routerLink="../recuperar-clave">Olvidé mi contraseña</a>
-                                </div>
-                </div>
-              </form>
-              <p class="text-center">¿Sin cuenta? <a data-toggle="tab" routerLink="../registro-administrador">Registrarme</a></p>
-            </div>
-          </div>
-            </div>
+
+        <div class="row pt-3 pb-3">
+            <input 
+            type="password" 
+            [(ngModel)]="clave" 
+            name="clave" 
+            placeholder="Contraseña" 
+            required="required"
+            />
         </div>
-    </div>
-</section>
+
+        <button class="btn btn-primary login" type="submit" (click)="loginAdministrador()">Ingresar</button>
+    </form>
+</div>

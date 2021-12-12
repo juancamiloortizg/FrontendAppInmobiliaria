@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
 const cryptoPackage: any = require("crypto-js");
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-identificacion-administrador',
@@ -16,35 +17,28 @@ export class IdentificacionAdministradorComponent implements OnInit {
     'clave': ['', [Validators.required]]
   });
 
-  email: string | undefined;
-  password: string | undefined;
+  usuario: string | undefined;
+  clave: string | undefined;
 
   constructor(private fb: FormBuilder,
-    private servicioSeguridad: SeguridadService) { }
+    private servicioSeguridad: SeguridadService,
+    public router: Router) { }
 
   ngOnInit(): void {
   }
 
-  IdentificarUsuario() {
-    let usuario = this.fgValidator.controls["usuario"].value;
-    let clave = this.fgValidator.controls["clave"].value;
-    let claveCifrada = cryptoPackage.MD5(clave).toString();
-    console.log(claveCifrada);
-    this.servicioSeguridad.IdentificarAdministrador(usuario, claveCifrada).subscribe((data: any) => {
-      alert("Correcto");
+  loginAdministrador() {
+    console.log(this.usuario + " | " + this.clave);
+    const user = {usuario: this.usuario, clave: this.clave};
+    this.servicioSeguridad.loginAdministrador(user).subscribe( data => {
+      this.servicioSeguridad.setToken(data.token);
+      this.servicioSeguridad.AlmacenarSesion(data);
+      // If it's redirected it's done the login
+      this.router.navigateByUrl('/');
     }, (error: any) => {
-      alert("No");
-    }, (complete: void) => {
-      alert("Finish");
-    });
-  }
-
-  login() {
-    const user = {email: this.email, password: this.password};
-    this.servicioSeguridad.login(user).subscribe( data => {
-      console.log(data);
-      alert("OK")
-    })
+      console.log(error);
+      alert("Datos no registrados.");
+    } );
   }
 
 }

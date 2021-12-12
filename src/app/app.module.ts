@@ -14,6 +14,7 @@ import { PoliticaPrivacidadComponent } from './plantilla/politica-privacidad/pol
 import { TerminosComponent } from './plantilla/terminos/terminos.component';
 import { OpcionesIngresoComponent } from './plantilla/opciones-ingreso/opciones-ingreso.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

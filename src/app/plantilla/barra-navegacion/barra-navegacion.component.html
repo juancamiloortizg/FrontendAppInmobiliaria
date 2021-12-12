@@ -7,11 +7,24 @@
         <div class="menu" id="show-menu">
             <nav>
                 <ul>
-                    <li class="menu-selected"><a class="text-menu-selected" href="#"> <i class="fas fa-home"></i> Inicio</a></li>
-                    <li><a routerLink="listado-inmuebles"> <i class="fas fa-building"></i> Inmuebles</a></li>
-                    <li><a routerLink="#"> <i class="fas fa-city"></i> Tipos Inmuebles</a></li>
-                    <li><a routerLink="opciones-registro" title="Registrate ahora" class="btn btn1"> <i class="far fa-user"></i>Registrarme</a></li>
-                    <li><a routerLink="opciones-ingreso" class="btn btn2" title="Ingresar a mi cuenta"> <i class="fas fa-user"></i>Ingresar</a></li>
+                    <li *ngIf="!seInicioSesion" class="menu-selected"><a class="text-menu-selected" href="#"> <i class="fas fa-home"></i> Inicio</a></li>
+                    <li *ngIf="!seInicioSesion"><a routerLink="listado-inmuebles"> <i class="fas fa-building"></i> Inmuebles</a></li>
+                    <li *ngIf="!seInicioSesion"><a routerLink="#"> <i class="fas fa-city"></i> Tipos Inmuebles</a></li>
+                    <li *ngIf="!seInicioSesion"><a routerLink="opciones-registro" title="Registrate ahora" class="btn btn1"> <i class="far fa-user"></i>Registrarme</a></li>
+                    <li *ngIf="!seInicioSesion"><a routerLink="opciones-ingreso" class="btn btn2" title="Ingresar a mi cuenta"> <i class="fas fa-user"></i>Ingresar</a></li>
+
+                    <!-- Sección menú para administrador -->
+                    <li *ngIf="seInicioSesion"><a routerLink="administracion/inmuebles/buscar-inmueble" title="Ingresar a mi cuenta"> <i class="fas fa-user"></i>Buscar inmueble</a></li>
+                    <li *ngIf="seInicioSesion"><a routerLink="administracion/inmuebles/crear-inmueble" title="Ingresar a mi cuenta"> <i class="fas fa-user"></i>Crear inmueble</a></li>
+                    <li *ngIf="seInicioSesion"><a routerLink="administracion/inmuebles/editar-inmueble" title="Ingresar a mi cuenta"> <i class="fas fa-user"></i>Editar inmueble</a></li>
+                    <li *ngIf="seInicioSesion"><a routerLink="administracion/inmuebles/eliminar-inmueble" title="Ingresar a mi cuenta"> <i class="fas fa-user"></i>Eliminar inmueble</a></li>
+                    <li *ngIf="seInicioSesion"><a routerLink="administracion/inmuebles/lista-inmueble" title="Ingresar a mi cuenta"> <i class="fas fa-user"></i>Lista inmuebles</a></li>
+
+                    <!-- Sección menú para asesor -->
+                    <li *ngIf="seInicioSesion"><a routerLink="#" class="btn btn2" title="Ingresar a mi cuenta"> <i class="fas fa-user"></i>Menú asesor</a></li>
+
+                    <!-- Sección menú cliente -->
+                    <li *ngIf="seInicioSesion"><a routerLink="seguridad/cerrar-sesion" class="btn btn2" title="Cerrar sesión"> <i class="fas fa-user"></i>Cerrar sesión</a></li>
                 </ul>
             </nav>
         </div>
